@@ -4,6 +4,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Font */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-lexend);
+
   --color-background: oklch(98.5% 0.015 240);
 
   /* primary */
@@ -133,7 +137,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight leading-tight;
+    @apply font-display font-medium tracking-tight leading-tight;
   }
 
   h1 {

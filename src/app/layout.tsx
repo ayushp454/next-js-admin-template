@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Lexend } from "next/font/google";
 import "./globals.css";
 import ThemeButton from "@/components/ThemeButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  fallback: ['system-ui', 'sans-serif']
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const lexend = Lexend({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lexend',
+  fallback: ['system-ui', 'sans-serif']
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${lexend.variable} antialiased`}
       >
         <main>
           <ThemeButton />
