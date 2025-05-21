@@ -32,9 +32,9 @@ export default function Home() {
         </div>
       </section>
 
-      <ul className="mb-4">
+      <ul className="mt-4">
         <li>
-          <Link href="/button">Button</Link>
+          <Link href="/button" className="p-2 border-2 bg-warning-500 rounded-lg">Go To Button</Link>
         </li>
       </ul>
     </main>

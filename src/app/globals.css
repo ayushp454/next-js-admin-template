@@ -96,6 +96,29 @@
   --color-neutral-800: oklch(0.2686 0 0);
   --color-neutral-900: oklch(0.2046 0 0);
   --color-neutral-950: oklch(0.1448 0 0);
+
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-40: 10rem;
+  --spacing-48: 12rem;
+  --spacing-56: 14rem;
+  --spacing-64: 16rem;
+
+  /* Radius */
+  --radius-sm: 0.125rem;
 }
 
 @layer base {
@@ -140,8 +163,29 @@
   @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
-@layer components {
+@utility card {
+  @apply bg-white dark:bg-neutral-900 rounded-lg shadow-md border border-neutral-200 dark:border-neutral-800;
+  @apply transition-all duration-200;
+}
 
+@utility input {
+  @apply block w-full rounded-md border-neutral-300 dark:border-neutral-700;
+  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100;
+  @apply focus:ring-primary-500 focus:border-primary-500;
+  @apply transition-all duration-200;
+  @apply px-3 py-2 text-sm;
+}
+
+@utility badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+@utility avatar {
+  @apply relative rounded-full overflow-hidden inline-block;
+}
+
+@layer components {
+  /* Button Utility */
   .btn-primary {
     @apply btn bg-primary-600 hover:bg-primary-700 text-white;
     @apply focus:ring-primary-500;
@@ -163,6 +207,41 @@
     @apply focus:ring-neutral-500;
   }
 
+  /* Badge Utility */
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300;
+  }
+
+  .badge-success {
+    @apply badge bg-success-100 text-success-800 dark:bg-success-900 dark:text-success-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-800 dark:bg-warning-900 dark:text-warning-300;
+  }
+
+  .badge-error {
+    @apply badge bg-error-100 text-error-800 dark:bg-error-900 dark:text-error-300;
+  }
+
+  /* Avatar Utility */
+  .avatar-sm {
+    @apply avatar w-8 h-8;
+  }
+
+  .avatar-md {
+    @apply avatar w-10 h-10;
+  }
+
+  .avatar-lg {
+    @apply avatar w-14 h-14;
+  }
+
+  /* Dark theme variable updates */
   .dark {
     --color-background: oklch(15% 0.05 240);
     
@@ -170,6 +249,20 @@
   }
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
 
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-neutral-900;
+}
 
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-700 rounded-full;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-600;
+}
