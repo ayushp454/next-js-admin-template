@@ -98,12 +98,70 @@
   --color-neutral-950: oklch(0.1448 0 0);
 }
 
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50;
+    @apply transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight leading-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl mb-6;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl mb-4;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl mb-3;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  button {
+    @apply btn;
+  }
+}
+
+@utility btn {
+  @apply px-4 py-2 rounded-md font-medium text-sm transition-all duration-400;
+  @apply flex items-center justify-center gap-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
 @layer components {
 
-  /* body {
-    @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50;
-    @apply transition-colors duration-1000;
-  } */
+  .btn-primary {
+    @apply btn bg-primary-600 hover:bg-primary-700 text-white;
+    @apply focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-600 hover:bg-secondary-700 text-white;
+    @apply focus:ring-secondary-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-600 hover:bg-accent-700 text-white;
+    @apply focus:ring-accent-500;
+  }
+
+  .btn-outline {
+    @apply btn border border-neutral-300 dark:border-neutral-700 bg-transparent;
+    @apply hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:text-white;
+    @apply focus:ring-neutral-500;
+  }
 
   .dark {
     --color-background: oklch(15% 0.05 240);
@@ -111,6 +169,7 @@
     --color-primary-500: oklch(63.94% 0.218 142.50);
   }
 }
+
 
 
 

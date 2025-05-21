@@ -1,14 +1,15 @@
 'use client';
 import { useThemeToggle } from "@/hooks/useTheme";
+import Link from "next/link";
 
 export default function Home() {
-  const { isDark, toggleTheme } = useThemeToggle();
+  const { isDark } = useThemeToggle();
   return (
-    <main className="bg-background p-3 border-1 border-amber-200 ">
-      <h1 className="text-primary-500 mb-3">
+    <main className="bg-background p-3 border-1 border-amber-200">
+      <h3 className="text-primary-500 mb-3">
         Change theme color <br />
         <u>-primary-500:</u> <br /> Ligth: blue & Dark: Green
-      </h1>
+      </h3>
 
       <hr className="dark:text-white mb-3" />
 
@@ -21,9 +22,21 @@ export default function Home() {
 
       <hr className="dark:text-white mb-3" />
 
-      <button onClick={toggleTheme} className="bg-amber-200 border-amber-200 dark:bg-primary-600 dark:text-gray-50 dark:border-none p-2 border-1 mb-3 rounded-lg">
-        Toggle Theme
-      </button>
+      <section id="button">
+        <h2 className="text-primary-500">Buttons</h2>
+        <div className="flex gap-1">
+          <button className="btn-primary">Primary Button</button>
+          <button className="btn-secondary">Primary Button</button>
+          <button className="btn-accent">Accent Button</button>
+          <button className="btn-outline">Outline Button</button>
+        </div>
+      </section>
+
+      <ul className="mb-4">
+        <li>
+          <Link href="/button">Button</Link>
+        </li>
+      </ul>
     </main>
   );
 }
