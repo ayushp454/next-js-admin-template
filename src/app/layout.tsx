@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${lexend.variable} antialiased`}
+        className={`${inter.variable} ${lexend.variable} font-sans antialiased`}
       >
         <main>
           <ThemeButton />

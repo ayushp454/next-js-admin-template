@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation'
 import {
   Users, Settings, Bell,
   LayoutDashboard, LogOut, Palette,
-  Menu, Search, X
+  Menu, Search, X,
+  Table
 } from 'lucide-react'
 import { SidebarItem } from '@/components/SidebarItem'
 
@@ -45,24 +46,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           />
         ))}
         <SidebarItem
-          href="/dashboard/main-menu"
+          href="/dashboard/table"
           icon={<Settings className="h-5 w-5" />}
           title="Sub Menus"
-          isActive={pathname === '/dashboard/main-menu'}
+          isActive={pathname === '/dashboard/table'}
           hasDropdown
         >
           <SidebarItem
-            href="/dashboard/menu1"
-            icon={<Palette className="h-5 w-5" />}
-            title="Components"
-            isActive={pathname === '/dashboard/menu1'}
+            href="/dashboard/table"
+            icon={<Table className="h-5 w-5" />}
+            title="Table Components"
+            isActive={pathname === '/dashboard/table'}
           />
-          <SidebarItem
+          {/* <SidebarItem
             href="/dashboard/menu2"
             icon={<Settings className="h-5 w-5" />}
             title="Settings"
             isActive={pathname === '/dashboard/menu2'}
-          />
+          /> */}
         </SidebarItem>
       </div>
       <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">

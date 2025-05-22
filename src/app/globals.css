@@ -3,10 +3,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
+@theme inline {
   /* Font */
   --font-sans: var(--font-inter);
   --font-display: var(--font-lexend);
+}
+
+@theme {
 
   --color-background: oklch(98.5% 0.015 240);
 
@@ -154,10 +157,6 @@
 
   p {
     @apply leading-relaxed;
-  }
-
-  button {
-    @apply btn;
   }
 }
 
