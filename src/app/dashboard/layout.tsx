@@ -6,7 +6,8 @@ import {
   Users, Settings, Bell,
   LayoutDashboard, LogOut, Palette,
   Menu, Search, X,
-  Table
+  Table,
+  ChevronDown
 } from 'lucide-react'
 import { SidebarItem } from '@/components/SidebarItem'
 
@@ -58,12 +59,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             title="Table Components"
             isActive={pathname === '/dashboard/table'}
           />
-          {/* <SidebarItem
-            href="/dashboard/menu2"
-            icon={<Settings className="h-5 w-5" />}
-            title="Settings"
-            isActive={pathname === '/dashboard/menu2'}
-          /> */}
+          <SidebarItem
+            href="/dashboard/react-select"
+            icon={<ChevronDown className="h-5 w-5" />}
+            title="React Select Components"
+            isActive={pathname === '/dashboard/react-select'}
+          />
         </SidebarItem>
       </div>
       <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">

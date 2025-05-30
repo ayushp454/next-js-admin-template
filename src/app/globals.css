@@ -12,6 +12,8 @@
 @theme {
 
   --color-background: oklch(98.5% 0.015 240);
+  --react-select-selected: oklch(66.73% 0.124 232.92);
+  --react-select-hover: oklch(93.74% 0.059 213.83);
 
   /* primary */
   --color-primary-50: oklch(98.5% 0.015 240);
@@ -247,6 +249,9 @@
   /* Dark theme variable updates */
   .dark {
     --color-background: oklch(15% 0.05 240);
+    /* Use the appropiate color for react-select black theme. */
+    --react-select-selected: oklch(15% 0.05 240);
+    --react-select-hover: oklch(63.94% 0.218 142.50);
     
     --color-primary-500: oklch(63.94% 0.218 142.50);
   }
