@@ -229,7 +229,7 @@ export function Table<T>({
           <div className="flex gap-2">
             <button onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1} className="btn-outline py-1 px-3 text-sm">Previous</button>
             {getPageList().map((item, k) => item === '...' ? (
-              <span key={k} className="px-3 text-sm text-neutral-500">…</span>
+              <span key={`index_${k}`} className="px-3 text-sm text-neutral-500">…</span>
             ) : (
               <button key={item} onClick={() => setPage(+item)} className={`${item === page ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'btn-outline'} py-1 px-3 text-sm rounded-md transition-colors`}>{item}</button>
             ))}
