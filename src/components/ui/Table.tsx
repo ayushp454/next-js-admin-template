@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Search, ArrowUpIcon, ArrowDownIcon } from 'lucide-react'
+import SearchIcon from '../icons/SearchIcon'
+import { ArrowUpIcon } from '../icons/ArrowUpIcon'
+import clsx from 'clsx'
 
 interface PaginationMeta {
   count: number
@@ -148,7 +150,7 @@ export function Table<T>({
       <div className="p-6 border-b border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-4">
         {searchEnabled && (
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-500" />
+            <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-500" />
             <input
               type="search"
               placeholder="Search..."
@@ -182,8 +184,14 @@ export function Table<T>({
                   {col.sortable ? (
                     <button className="flex items-center gap-1" onClick={() => handleSort(col)}>
                       {col.header}
-                      {sortBy === (col.accessor as string) && sortDir === 'asc' && <ArrowUpIcon className="h-3 w-3" />}
-                      {sortBy === (col.accessor as string) && sortDir === 'desc' && <ArrowDownIcon className="h-3 w-3" />}
+                      {sortBy === (col.accessor as string) && (
+                        <ArrowUpIcon
+                          className={clsx(
+                            'h-3 w-3 transition-transform',
+                            sortDir === 'asc' ? '' : 'rotate-180',
+                          )}
+                        />
+                      )}
                     </button>
                   ) : (
                     col.header

@@ -2,21 +2,25 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
-import {
-  Users, Settings, Bell,
-  LayoutDashboard, LogOut, Palette,
-  Menu, Search, X,
-  Table,
-  ChevronDown
-} from 'lucide-react'
 import { SidebarItem } from '@/components/SidebarItem'
+import { DashboardIcon } from '@/components/icons/DashboardIcon'
+import { UsersIcon } from '@/components/icons/UsersIcon'
+import { BellIcon } from '@/components/icons/BellIcon'
+import { PaletteIcon } from '@/components/icons/PaletteIcon'
+import SettingIcon from '@/components/icons/SettingIcon'
+import { LogOutIcon } from '@/components/icons/LogOutIcon'
+import MenuIcon from '@/components/icons/MenuIcon'
+import SearchIcon from '@/components/icons/SearchIcon'
+import { XIcon } from '@/components/icons/XIcon'
+import { TableIcon } from '@/components/icons/TableIcon'
+import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon'
 
 const NAV_ITEMS = [
-  { href: '/dashboard', title: 'Dashboard', Icon: LayoutDashboard },
-  { href: '/dashboard/users', title: 'Users', Icon: Users },
-  { href: '/dashboard/notifications', title: 'Notifications', Icon: Bell },
-  { href: '/dashboard/components', title: 'Components', Icon: Palette },
-  { href: '/dashboard/settings', title: 'Settings', Icon: Settings },
+  { href: '/dashboard', title: 'Dashboard', Icon: DashboardIcon },
+  { href: '/dashboard/users', title: 'Users', Icon: UsersIcon },
+  { href: '/dashboard/notifications', title: 'Notifications', Icon: BellIcon },
+  { href: '/dashboard/components', title: 'Components', Icon: PaletteIcon },
+  { href: '/dashboard/settings', title: 'Settings', Icon: SettingIcon },
 ]
 
 const COL_HIDE = 'hidden md:block'
@@ -48,20 +52,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         ))}
         <SidebarItem
           href="/dashboard/table"
-          icon={<Settings className="h-5 w-5" />}
+          icon={<SettingIcon className="h-5 w-5" />}
           title="Sub Menus"
           isActive={pathname === '/dashboard/table'}
           hasDropdown
         >
           <SidebarItem
             href="/dashboard/table"
-            icon={<Table className="h-5 w-5" />}
+            icon={<TableIcon className="h-5 w-5" />}
             title="Table Components"
             isActive={pathname === '/dashboard/table'}
           />
           <SidebarItem
             href="/dashboard/react-select"
-            icon={<ChevronDown className="h-5 w-5" />}
+            icon={<ChevronDownIcon className="h-5 w-5" />}
             title="React Select Components"
             isActive={pathname === '/dashboard/react-select'}
           />
@@ -70,7 +74,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
         <SidebarItem
           href="/"
-          icon={<LogOut className="h-5 w-5" />}
+          icon={<LogOutIcon className="h-5 w-5" />}
           title="Log out"
           isActive={false}
         />
@@ -91,7 +95,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className="p-4 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800">
               <Logo />
               <button onClick={closeSidebar} className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800">
-                <X className="h-5 w-5" />
+                <XIcon className="h-5 w-5" />
               </button>
             </div>
             {renderNav(true)}
@@ -128,7 +132,7 @@ const Header = ({ onMenuClick }: { onMenuClick: () => void }) => (
   <header className="h-16 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between px-4 sticky top-0 z-20">
     <div className="flex items-center gap-4">
       <button onClick={onMenuClick} className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 md:hidden">
-        <Menu className="h-5 w-5" />
+        <MenuIcon />
       </button>
       <SearchBox />
     </div>
@@ -141,7 +145,7 @@ const Header = ({ onMenuClick }: { onMenuClick: () => void }) => (
 
 const SearchBox = () => (
   <div className="relative hidden sm:block w-64">
-    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-500" />
+    <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-500" />
     <input
       type="text"
       placeholder="Search..."
@@ -152,7 +156,7 @@ const SearchBox = () => (
 
 const Notification = () => (
   <button className="p-1.5 rounded-full text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 relative">
-    <Bell className="h-5 w-5" />
+    <BellIcon className="h-5 w-5" />
     <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-accent-500" />
   </button>
 )

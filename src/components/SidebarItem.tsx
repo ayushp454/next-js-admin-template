@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDownIcon } from './icons/ChevronDownIcon'
 
 interface SidebarItemProps {
   href: string
@@ -40,7 +40,7 @@ export const SidebarItem = ({
             <span className="mr-3">{icon}</span>
             <span>{title}</span>
           </div>
-          <ChevronDown 
+          <ChevronDownIcon 
             className={`h-4 w-4 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} 
           />
         </button>
