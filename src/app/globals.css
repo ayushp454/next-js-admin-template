@@ -253,7 +253,7 @@
     --react-select-selected: oklch(15% 0.05 240);
     --react-select-hover: oklch(63.94% 0.218 142.50);
     
-    --color-primary-500: oklch(63.94% 0.218 142.50);
+    /* --color-primary-500: oklch(63.94% 0.218 142.50); */
   }
 }
 

@@ -6,7 +6,7 @@ import { ChevronDownIcon } from './icons/ChevronDownIcon'
 
 interface SidebarItemProps {
   href: string
-  icon: React.ReactNode
+  icon?: React.ReactNode
   title: string
   isActive: boolean
   onClick?: () => void
@@ -37,7 +37,7 @@ export const SidebarItem = ({
             }`}
         >
           <div className="flex items-center">
-            <span className="mr-3">{icon}</span>
+            {icon && <span className="mr-3">{icon}</span>}
             <span>{title}</span>
           </div>
           <ChevronDownIcon 
@@ -54,7 +54,7 @@ export const SidebarItem = ({
               : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800/50'
             }`}
         >
-          <span className="mr-3">{icon}</span>
+          {icon && <span className="mr-3">{icon}</span>}
           <span>{title}</span>
         </Link>
       )}

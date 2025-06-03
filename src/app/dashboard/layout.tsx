@@ -78,6 +78,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           title="Log out"
           isActive={false}
         />
+        <SidebarItem
+          href="/dashboard/verify-email"
+          title="Verify Email"
+          isActive={false}
+        />
       </div>
     </nav>
   ), [pathname])
